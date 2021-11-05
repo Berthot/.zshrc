@@ -3,16 +3,15 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/bertho/.oh-my-zsh"
-
 export HADOOP_HOME="/opt/hadoop-3.2.1"
 export PATH="$PATH:$HADOOP_HOME/bin"
+export PATH=$PATH:/home/bertho/go/bin
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-ZSH_THEME="lukerandall"
-
+ZSH_THEME="robbyrussell"
+# ZSH_THEME="lukerandall"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -83,8 +82,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-
-
 function goo() {
         google-chrome google.com/search?q="$*" > /dev/null 2>&1 &
         disown
@@ -117,11 +114,17 @@ function fire() {
 alias google="nohup google-chrome > /dev/null 2>&1 & disown"
 alias ff='nohup firefox & 2> /dev/null $ disown; exit;'
 
+alias kazen_bot='/home/bertho/Music/ngrok http https://localhost:9001 -host-header=localhost:9001'
+
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias gs='git status'
 alias gall='git add .'
+
+alias example='f() { echo Your arg was $1. };f'
+
+alias exsubmit='f() { exercism submit $1 };f'
 
 alias monitor_default='xrandr --output eDP-1-1 --primary'
 alias monitor_first='xrandr --output HDMI-1-1 --primary'
@@ -129,3 +132,4 @@ alias monitor_first='xrandr --output HDMI-1-1 --primary'
 alias pizzaria='psql -h localhost -U bertho -d pizzaria'
 alias myp='psql -h localhost -U bertho -d myp'
 alias test='psql -h localhost -U bertho -d test'
+source /home/bertho/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
