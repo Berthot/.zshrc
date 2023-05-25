@@ -111,6 +111,12 @@ function fire() {
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+alias dockerup='docker-compose up -d'
+alias dockerdown='docker-compose down'
+alias dockerps='docker-compose ps'
+
+alias flix='cd /home/bertho/Documents/personal_projects/MYP_PROJECTS/MYP.Authentication'
+
 alias google="nohup google-chrome > /dev/null 2>&1 & disown"
 alias ff='nohup firefox & 2> /dev/null $ disown; exit;'
 
